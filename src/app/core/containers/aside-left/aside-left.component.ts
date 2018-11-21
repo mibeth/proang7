@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
@@ -19,9 +19,19 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
   ]
 })
 export class AsideLeftComponent implements OnInit {
+  _stateClick:string;
+
   user: {
     name:string, email:string,photoUrl:string
   };
+
+  @Input()
+  get stateClick():string{
+    return this._stateClick;
+ };
+ set stateClick (data :string){
+  this._stateClick =data;
+};
 
   constructor() { }
 

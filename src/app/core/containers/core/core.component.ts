@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CoreComponent implements OnInit {
 
   dataBook :string;
+  stateHamburguer :string;
   constructor() { }
 
   ngOnInit() {
@@ -15,6 +16,10 @@ export class CoreComponent implements OnInit {
 
   searchBook(data: string){
     this.dataBook = data;
+  }
+
+  asideState(data :string){
+    this.stateHamburguer = data;
   }
 
 }
