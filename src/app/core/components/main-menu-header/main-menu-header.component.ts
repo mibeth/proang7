@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./main-menu-header.component.css']
 })
 export class MainMenuHeaderComponent implements OnInit {
- @Input() user:{name:string, photoUrl:string};
+ @Input() user:{name:string, email:string, photoUrl:string};
   constructor() { }
 
   ngOnInit() {

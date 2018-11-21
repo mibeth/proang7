@@ -9,12 +9,19 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { MainMenuHeaderComponent } from './components/main-menu-header/main-menu-header.component';
 import { BtnSearchComponent } from './components/btn-search/btn-search.component';
 import { TopNavUserIconComponent } from './components/top-nav-user-icon/top-nav-user-icon.component';
+import { ApplicationPipesModuleModule } from '../application-pipes-module/application-pipes-module.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+
 
 @NgModule({
   declarations: [CoreComponent, TopNavBarComponent, AsideLeftComponent, MainContentComponent, MainMenuComponent, MainMenuHeaderComponent, BtnSearchComponent, TopNavUserIconComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ApplicationPipesModuleModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   exports: [
     CoreComponent
