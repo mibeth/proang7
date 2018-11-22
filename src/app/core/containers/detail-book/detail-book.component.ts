@@ -9,13 +9,10 @@ import {books} from "../../../books";
 })
 export class DetailBookComponent implements OnInit {
   id:string;
-  constructor(private route: ActivatedRoute) {
-
-   }
+  constructor(private route: ActivatedRoute) { }
    book :any;
 
   ngOnInit() {
-
     this.route.params.subscribe(
       (params: Params)=> {
       this.id = params.id;
@@ -25,7 +22,5 @@ export class DetailBookComponent implements OnInit {
         return item.id === this.id;
       }
     );
-
   }
-
 }
