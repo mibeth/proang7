@@ -12,16 +12,20 @@ import { TopNavUserIconComponent } from './components/top-nav-user-icon/top-nav-
 import { ApplicationPipesModuleModule } from '../application-pipes-module/application-pipes-module.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { DetailBookComponent } from './containers/detail-book/detail-book.component';
+import { RouterModule } from "@angular/router";
+import { routes } from "./routes.core";
 
 
 @NgModule({
-  declarations: [CoreComponent, TopNavBarComponent, AsideLeftComponent, MainContentComponent, MainMenuComponent, MainMenuHeaderComponent, BtnSearchComponent, TopNavUserIconComponent],
+  declarations: [CoreComponent, TopNavBarComponent, AsideLeftComponent, MainContentComponent, MainMenuComponent, MainMenuHeaderComponent, BtnSearchComponent, TopNavUserIconComponent, DetailBookComponent],
   imports: [
     CommonModule,
     FormsModule,
     ApplicationPipesModuleModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes)
   ],
   exports: [
     CoreComponent

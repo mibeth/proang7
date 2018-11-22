@@ -6,6 +6,9 @@
 </div>
 <div class="row body-content">
   <app-aside-left [stateClick]="stateHamburguer" class="col-3"></app-aside-left>
-  <app-main-content [dataBook]="dataBook" class="col-9 main-section"></app-main-content>
+  <!--app-main-content [dataBook]="dataBook" class="col-9 main-section"></app-main-content-->
+ <div class="col-9 main-section">
+   <router-outlet></router-outlet> 
+  </div>
 </div>
 </div>
