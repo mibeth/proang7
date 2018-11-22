@@ -58,6 +58,10 @@ aside.left-aside2{
 flex: 0 0 50px;
 }
 
+aside.left-aside2 .user-info{
+    display: none;
+    }
+
 aside.left-aside2 span{
     display: none;
 }
