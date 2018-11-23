@@ -25,7 +25,7 @@ import { routes } from "./routes.core";
     ApplicationPipesModuleModule,
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ],
   exports: [
     CoreComponent
