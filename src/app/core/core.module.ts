@@ -16,7 +16,6 @@ import { DetailBookComponent } from './containers/detail-book/detail-book.compon
 import { RouterModule } from "@angular/router";
 import { routes } from "./routes.core";
 
-
 @NgModule({
   declarations: [CoreComponent, TopNavBarComponent, AsideLeftComponent, MainContentComponent, MainMenuComponent, MainMenuHeaderComponent, BtnSearchComponent, TopNavUserIconComponent, DetailBookComponent],
   imports: [

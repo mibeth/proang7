@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PokeCollectionsComponent } from './container/poke-collections/poke-collections.component';
+import { PokeCollectionsComponent } from './containers/poke-collections/poke-collections.component';
 
 @NgModule({
   declarations: [PokeCollectionsComponent],
