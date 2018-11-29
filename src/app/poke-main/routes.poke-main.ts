@@ -4,7 +4,7 @@ import {MainContentComponent} from './containers/main-content/main-content.compo
 
 export const routes: Routes =[
     {
-        path:'',
+        path:'list',
         component: MainContentComponent
     },
             {
