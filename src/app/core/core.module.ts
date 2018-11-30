@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CoreComponent } from './containers/core/core.component';
+import { AlertsModule } from "../alerts/alerts.module";
 import { TopNavBarComponent } from './containers/top-nav-bar/top-nav-bar.component';
 import { AsideLeftComponent } from './containers/aside-left/aside-left.component';
 import { MainContentComponent } from './containers/main-content/main-content.component';
@@ -22,6 +23,7 @@ import { routes } from "./routes.core";
     CommonModule,
     FormsModule,
     ApplicationPipesModuleModule,
+    AlertsModule,
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forChild(routes)
