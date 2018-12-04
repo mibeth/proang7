@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
+
 @Component({
   selector: 'app-top-nav-bar',
   templateUrl: './top-nav-bar.component.html',
@@ -18,6 +19,7 @@ export class TopNavBarComponent implements OnInit {
 
   search(data :string){
     this.searchTop.emit(data);
+
   }
 
   asideStateChange(){

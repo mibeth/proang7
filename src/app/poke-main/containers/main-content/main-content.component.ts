@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonsService } from "../../services/pokemons.service";
+import { SearchsPokemonServiceService } from "src/app/poke-main/services/searchs-pokemon-service.service";
 
 
 @Component({
@@ -11,7 +12,7 @@ export class MainContentComponent implements OnInit {
 
 
 books : any[] = [];
-  constructor(private PokemonsService : PokemonsService) { }
+  constructor(private PokemonsService : PokemonsService, private  searchsPokemonServiceService:SearchsPokemonServiceService) { }
 
   ngOnInit() {
     this.getPokemons();
@@ -19,6 +20,20 @@ books : any[] = [];
 
   getPokemons(): void {
     this.PokemonsService.getPokemons()
-    .subscribe(pokemons => this.books = pokemons);
+          .subscribe(pokemons => this.books = pokemons); 
+    this.searchsPokemonServiceService.getMessage()
+    .subscribe(
+      (name:string) => {
+        if (name == null){
+          this.PokemonsService.getPokemons()
+          .subscribe(pokemons => this.books = pokemons);
+        }else{
+          this.PokemonsService.getPokemon(name)
+          .subscribe(pokemons => {
+            console.log(pokemons);
+            this.books = pokemons});
+        }
+      }
+    )
     }
 }
