@@ -55,7 +55,8 @@
                     <div class="shape6"></div>
                     <div class="shape7"></div>
                     <div class="float">
-                        <form [formGroup]="loginForm" (ngSubmit)='submit()' class="form" action="">
+                        
+                        <form [formGroup]="loginForm" (ngSubmit)="submit()" class="form" action="">
                             <div class="form-group">
                                 <label for="username" class="text-white">Username:</label><br>
                                 <input type="email" name="email" id="username" class="form-control" required formControlName="email">
