@@ -16,6 +16,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DetailBookComponent } from './containers/detail-book/detail-book.component';
 import { RouterModule } from "@angular/router";
 import { routes } from "./routes.core";
+import { AuthModule } from "../auth/auth.module";
 
 @NgModule({
   declarations: [CoreComponent, TopNavBarComponent, AsideLeftComponent, MainContentComponent, MainMenuComponent, MainMenuHeaderComponent, BtnSearchComponent, TopNavUserIconComponent, DetailBookComponent],
@@ -26,6 +27,7 @@ import { routes } from "./routes.core";
     AlertsModule,
     BrowserModule,
     BrowserAnimationsModule,
+    AuthModule,
     RouterModule.forChild(routes)
   ],
   exports: [

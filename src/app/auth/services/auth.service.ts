@@ -11,9 +11,45 @@ import { Router } from "@angular/router";
 })
 export class AuthService {
 
-  constructor(private authFire : AngularFireAuth, private router:Router) { }
+  _isLogged: boolean;
+
+  constructor(private authFire : AngularFireAuth, private router:Router) {
+    this.authFire.authState.subscribe(
+      auth => {
+        if(auth){
+          this._isLogged = true;
+        }else{
+          this._isLogged = false;
+        }
+      }
+    );
+   }
 
   login(auth : ILogin){
     return this.authFire.auth.signInWithEmailAndPassword(auth.email, auth.password);
   }
+
+  loginWithGoogle(){
+    return this.authFire.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+
+  isLoggedIn() : boolean{
+    return this._isLogged;
+  }
+
+  logout(){
+    localStorage.removeItem('bzgPokeApp');
+    this.authFire.auth.signOut()
+    .then(
+      res => {
+        this.router.navigate(['/login']);
+      }
+    )
+  }
+
+  profileUser(){
+    return this.authFire.authState;
+  }
+
+
 }

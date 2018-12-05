@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
+import { AuthService } from "../../../auth/services/auth.service";
 
 @Component({
   selector: 'app-aside-left',
@@ -33,7 +34,9 @@ export class AsideLeftComponent implements OnInit {
   this._stateClick =data;
 };
 
-  constructor() { }
+  constructor(private authService:AuthService) { 
+    
+  }
 
   ngOnInit() {
     this.user ={

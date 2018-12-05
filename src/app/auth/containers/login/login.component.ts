@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { ILogin } from "../../models/interfaces/ILogin";
 import { Login } from "../../models/Login";
 import { FormBuilder, Validators } from "@angular/forms";
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     password: ['', Validators.required]
   });
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router : Router) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private zone: NgZone, private router : Router) {
     this.login = new Login();
   }
 
@@ -30,6 +30,24 @@ export class LoginComponent implements OnInit {
         user => {
           localStorage.setItem('bzgPokeApp', JSON.stringify(user));
           this.router.navigate(['main'])
+        }
+      );
+    }
+  }
+
+  signWithGoogle(){
+    console.log("entro");
+    if (this.loginForm.value) {
+      this.authService.loginWithGoogle()
+      .then(
+        user => {
+          localStorage.setItem('bzgPokeApp', JSON.stringify(user));
+          this.zone.run(
+            res =>{
+              this.router.navigate(['main'])
+            }
+          );
+          
         }
       );
     }
