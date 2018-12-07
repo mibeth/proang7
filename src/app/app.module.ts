@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { CoreModule} from './core/core.module';
 import { RouterModule } from "@angular/router";
 import { AuthModule} from "./auth/auth.module";
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './data-api/books-dummy-api';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
@@ -26,12 +26,12 @@ import { routes } from "./routes";
     HttpClientModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    HttpClientInMemoryWebApiModule.forRoot(      
+   /* HttpClientInMemoryWebApiModule.forRoot(      
       InMemoryDataService, { 
         dataEncapsulation: false,
         delay:3000 
       }    
-      ),
+      ),*/
     AngularFireModule.initializeApp(environment.firebaseConfig,'poke-app-fe5a7'),
     AngularFireAuthModule,
     AngularFireDatabaseModule,

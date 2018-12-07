@@ -13,9 +13,6 @@ import { AuthService } from './services/auth.service';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)
-  ],
-  exports: [
-    AuthService
   ]
 })
 export class AuthModule { }
