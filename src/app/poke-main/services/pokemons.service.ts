@@ -30,7 +30,7 @@ export class PokemonsService {
       user => {
         if(user){
           this.user = user;
-          this.favsRef = rbd.list(`favorities/${this.user.uid}`);
+          this.favsRef = rbd.list(`favorites/${this.user.uid}`);
         }
       }
     );
@@ -41,13 +41,6 @@ export class PokemonsService {
     .pipe(
      tap(p => console.log(`Obtiene los pokemons`)),
      catchError(this.handleError('getPokemons', []))
-    );
-  }
-
-  getPokemonsII(): Observable<IPokeList>{
-    return this.http.get<IPokeList>(this.pokemonsUrl)
-    .pipe(
-      tap(p => console.log(`Obtiene los pokemons`))
     );
   }
 

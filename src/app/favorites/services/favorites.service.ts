@@ -18,7 +18,7 @@ export class FavoritesService {
       user => {
         if(user){
           this.user = user;
-          this.favsRef = rbd.list(`favorities/${this.user.uid}`);
+          this.favsRef = rbd.list(`favorites/${this.user.uid}`);
         }
       }
     );

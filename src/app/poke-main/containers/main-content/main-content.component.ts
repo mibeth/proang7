@@ -24,13 +24,14 @@ books : any[]= [];
   }
 
   getPokemons(): void {
-    this.pokemonsService.getPokemonsII()
+    this.pokemonsService.getPokemons()
           .subscribe(  
             pokemons => {
-           pokemons["results"].forEach(element => {
+              let list :any[] = pokemons["results"];
+              list.slice(0,100).forEach(element => {
               this.pokemonsService.getPokemonUrl(element.url)
               .subscribe( p =>{
-                this.books.push = p;
+                this.books.push(p);
               }
               )
             });
